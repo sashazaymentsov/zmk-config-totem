@@ -70,20 +70,12 @@
     };
 
     macros {
-        gif: gif {
-            label = "giphy";
+        en_dot: en_dot {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LSHFT>,
-                <&macro_tap>,
-                <&kp N2>,
-                <&macro_release>,
-                <&kp LSHFT>,
-                <&macro_tap>,
-                <&kp G &kp I &kp F>,
-                <&macro_press>;
+            bindings = <&kp LS(LEFT_ALT)>, <&macro_wait_time 25>, <&kp DOT>;
+
+            label = "EN_DOT";
         };
     };
 
@@ -136,7 +128,7 @@
 
             bindings = <
         &kp ESC    &kp MINUS      &kp EQUAL       &kp PLUS          &kp COLON    &kp RBRC  &none         &none      &none  &none
-        &kp LSHFT  &kp LESS_THAN  &kp UNDERSCORE  &kp GREATER_THAN  &kp SEMI     &kp RBKT  &kp DOT       &kp COMMA  &none  &none
+        &kp LSHFT  &kp LESS_THAN  &kp UNDERSCORE  &kp GREATER_THAN  &kp SEMI     &kp RBKT  &en_dot       &kp COMMA  &none  &none
 &trans  &kp DEL    &kp ASTRK      &kp AT_SIGN     &kp SLASH         &kp LPAR     &kp RPAR  &kp QUESTION  &none      &none  &none  &trans
                                   &trans          &trans            &trans       &mo ADJ   &kp KP_N0     &trans
             >;
